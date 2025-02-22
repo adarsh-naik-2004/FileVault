@@ -21,7 +21,7 @@ int executeCryption(const std::string &taskData) {
 
     std::tm* now = std::localtime(&curr_time);
 
-    std::cout <<"Exit at:"<< std::put_time(now, "%Y-%m-%d %H:%M:%S")<< std::endl;
+    // std::cout <<"Exit at:"<< std::put_time(now, "%Y-%m-%d %H:%M:%S")<< std::endl;
 
     return 0;
 }
