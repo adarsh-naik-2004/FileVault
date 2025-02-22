@@ -23,7 +23,8 @@ int main() {
         if (f_stream.is_open()) {
             auto task = std::make_unique<Task>(std::move(f_stream), action, filePath);
             processManager.submitToQueue(std::move(task));
-        } else {
+        } 
+        else {
             std::cout << "Skipping unreadable file " << filePath << std::endl;
         }
     }

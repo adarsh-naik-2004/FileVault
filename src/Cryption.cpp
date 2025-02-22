@@ -2,7 +2,8 @@
 #include "Task.hpp"
 #include "Env.hpp"
 #include <iostream>
-
+#include <ctime>
+#include <iomanip>
 int executeCryption(const std::string &taskData) {
     Task task = Task::fromString(taskData);
     ReadEnv env;
@@ -15,5 +16,12 @@ int executeCryption(const std::string &taskData) {
         task.f_stream.put(ch);
     }
     task.f_stream.close();
+
+    std::time_t curr_time = std::time(nullptr);
+
+    std::tm* now = std::localtime(&curr_time);
+
+    std::cout <<"Exit at:"<< std::put_time(now, "%Y-%m-%d %H:%M:%S")<< std::endl;
+
     return 0;
 }
