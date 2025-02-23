@@ -2,6 +2,9 @@
 CXX = g++
 CXXFLAGS = -g -I./include -Wall -Wextra -std=c++17
 
+# OpenSSL Library
+LDFLAGS = -lcrypto
+
 # Directories
 SRCDIR = src
 BUILDDIR = build
@@ -20,7 +23,7 @@ all: $(TARGET)
 
 # Linking the Final Executable
 $(TARGET): $(OBJECTS) | $(BINDIR)
-	$(CXX) $(CXXFLAGS) $^ -o $@
+	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDFLAGS)
 
 # Compiling Source Files
 $(BUILDDIR)/%.o: $(SRCDIR)/%.cpp | $(BUILDDIR)
