@@ -115,4 +115,3 @@ ProcessManagement::~ProcessManagement() {
     munmap(sharedMem, sizeof(SharedMemory));
     shm_unlink(SHM_NAME);
 }
-

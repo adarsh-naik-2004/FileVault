@@ -5,7 +5,7 @@ import string
 def generate_random_text(size=256):
     return ''.join(random.choices(string.ascii_letters + string.digits, k=size))
 
-def create_test_files(folder="test", num_files=100, file_size=256):
+def create_test_files(folder="test", num_files=50, file_size=256):
     os.makedirs(folder, exist_ok=True)
     
     for i in range(1, num_files + 1):
